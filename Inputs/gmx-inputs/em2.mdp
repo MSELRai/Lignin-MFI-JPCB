@@ -1,0 +1,45 @@
+integrator           = steep
+emtol                = 0.001
+emstep               = 0.01
+nsteps               = 50000
+
+;Output cntrol
+nstxout              = 0
+nstvout              = 0
+nstfout              = 0
+nstxout-compressed   = 100
+nstlog               = 100
+nstenergy            = 100
+
+;Bond parameters
+continuation         = no
+constraint_algorithm = lincs
+constraints          = none
+lincs_iter           = 1
+lincs_order          = 4
+lincs-warnangle      = 90
+
+; Pair Searching 
+nstlist              = 5
+rlist                = 1.2
+
+; LJ/PME 
+cutoff-scheme        = verlet
+vdwtype              = cut-off
+vdw-modifier         = Force-switch
+rvdw                 = 1.2
+rvdw-switch          = 1.0
+coulombtype          = PME
+rcoulomb             = 1.2 
+DispCorr             = EnerPres 
+
+
+;Periodic boundary conditions
+pbc                  = xyz
+periodic-molecules   = yes
+
+; COM motion removal
+nstcomm              = 20 
+comm-mode            = Linear
+comm-grps            = system
+

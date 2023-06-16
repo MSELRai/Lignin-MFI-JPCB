@@ -1,0 +1,30 @@
+; Include forcefield parameters
+#include "./system.ff/charmm36.itp"
+#include "./system.ff/MFI-slab-774.itp"
+#include "./system.ff/softwood.itp"
+#include "./system.ff/methanol.itp"
+#include "./system.ff/tip4p_ewald.itp"
+
+[ system ]
+; Name
+Title
+
+[ molecules ]
+
+; Uncomment as needed! 
+
+; For 0% methanol system 
+;MFI      1 
+;LIG  	 1
+;T4EW  	 129150
+
+; For 50% methanol system 
+;MFI  	 1
+;LIG  	 1
+;MET      42625
+;T4EW  	 42625
+
+; For 50% methanol system 
+;MFI  	 1
+;LIG  	 1
+;MET  	 63000

@@ -1,0 +1,51 @@
+integrator           = md 
+nsteps               = 150000000 
+dt                   = 0.002
+
+;Output cntrol
+nstxout              = 0
+nstvout              = 0
+nstfout              = 0
+nstxout-compressed   = 5000
+nstlog               = 5000
+nstenergy            = 5000
+
+;Bond parameters
+continuation         = yes 
+constraint_algorithm = lincs
+constraints          = h-bonds 
+lincs_iter           = 1
+lincs_order          = 4
+lincs-warnangle      = 90
+
+; Pair Searching 
+nstlist              = 20 
+rlist                = 1.2
+
+; LJ/PME 
+cutoff-scheme        = verlet
+vdwtype              = cut-off
+vdw-modifier         = Force-switch
+rvdw                 = 1.2
+rvdw-switch          = 1.0
+coulombtype          = PME
+rcoulomb             = 1.2
+DispCorr             = EnerPres 
+
+;Periodic boundary conditions
+pbc                  = xyz
+periodic-molecules   = yes
+
+; COM motion removal
+nstcomm              = 100
+comm-mode            = Linear
+comm-grps            = system
+
+;Temperature Settings
+tcoupl               = v-rescale 
+tc-grps              = system
+tau-t                = 4.0
+ref-t                = 300 
+
+;Generate initial velocities
+gen-vel              = no 
